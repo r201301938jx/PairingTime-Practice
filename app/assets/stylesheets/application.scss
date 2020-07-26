@@ -21,12 +21,12 @@ header span {
  color: #fff;
 }
 
-header, nav, h1, h2, h3, h4, th, td, .btn {
+header, nav, h1, h2, h3, h4, th, td, .btn, p {
   font-family: Chalkduster;
 }
 
 body {
-   background-image: image-url('image13.jpg');
+   background-image: image-url('image6.jpg');
    background-size: cover;
    background-position: center;
 }
@@ -69,20 +69,39 @@ footer p {
  padding: 10px;
 }
 
+.discription{
+ margin: 180px auto;
+ text-align: center;
+}
+
+.discription h2 {
+ font-size: 26px;
+ border-bottom: 3px double #8B4513;
+ margin-bottom: 30px;
+ font-weight: 700;
+}
+
+.discription p {
+ font-size: 18px;
+}
+
 .right-upper {
  background-image: image-url('image7.jpg');
  background-size: cover;
  background-position: center center;
+ border: 10px solid #8B4513;
 }
 
 .left-middle {
  background-image: image-url('image14.jpg');
  background-size: cover;
  background-position: center center;
+ border: 10px solid #8B4513;
 }
 
 .right-bottom {
  background-image: image-url('image15.jpg');
  background-size: cover;
  background-position: center center;
+ border: 10px solid #8B4513;
 }
