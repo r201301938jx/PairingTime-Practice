@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col-xs-2">
+    <h3>User Info</h3>
+    <%= attachment_image_tag @pairing.user, :profile_image, :fill, 90, 90, format:'jpg', class:"attachment user profile_image fallback", fallback: "no_image.jpg", size:'90x90' %>
+    <table class="table userinfo">
+      <tbody>
+        <tr></tr>
+        <tr>
+          <th>Username</th>
+        </tr>
+        </tr>
+          <th><%= @pairing.user.name %></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-xs-5">
+    <h2>Pairing Detail</h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>Image</th>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to pairing_path(@pairing) do %>
+                <%= attachment_image_tag @pairing, :image, :fill, 150, 150, format:'jpg' %>
+              <% end %>
+              <br>
+              <% if @pairing.favorited_by?(current_user) %>
+                <%= link_to pairing_favorites_path(@pairing), method: :delete do %>
+                  <i class="fa fa-heart" aria-hidden="true", style="color: red;"></i>
+                  <%= pluralize(@pairing.favorites.count, "like") %>
+                <% end %>
+              <% else %>
+                <%= link_to pairing_favorites_path(@pairing), method: :post do %>
+                  <i class="fa fa-heart-o" aria-hidden="true"></i>
+                  <%= pluralize(@pairing.favorites.count, "like") %>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th>Title</th>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to @pairing.title, pairing_path(@pairing) %>
+            </td>
+          </tr>
+          <tr>
+            <th>Caption</th>
+          </tr>
+          <tr>
+            <td><%= @pairing.caption %></td>
+          </tr>
+          <% if @pairing.user == current_user %>
+            <tr>
+              <td>
+                <%= link_to "Edit", edit_pairing_path(@pairing), class:"btn-sm btn-success" %>
+                <%= link_to "Delete", pairing_path(@pairing), method: :delete, data: {confirm:"本当に消しますか？"}, class:"btn-sm btn-danger" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="section-title-wrapper style-1 v1 mt-30" id="divAddComment">
+        <h3 class="section-title left">
+          <span>New Comment</span>
+        </h3>
+      </div>
+      <%= form_for [@pairing, @post_comment] do |f| %>
+        <div class="row">
+          <div class="col-sm-12">
+            <%= f.text_area :comment, class:"form-control", rows:"5", placeholder:"comment here" %>
+          </div>
+        </div>
+        <%= f.submit "Comment", class:"btn btn-sm btn-success pull-right" %>
+      <% end %>
+    </div>
+    <div class="col-xs-5">
+      <h2>Comments</h2>
+      <div class="comment-list bt style-2" id="comments">
+        <div class="float-wrapper">
+        <h4 class="comment-count"><%= pluralize(@pairing.post_comments.count, "comment") %></h4>
+      </div>
+      <table class="table">
+        <tbody>
+          <% @pairing.post_comments.each do |post_comment| %>
+            <tr>
+              <td>
+            　   <%= attachment_image_tag post_comment.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %> |
+                <%= link_to post_comment.user.name, user_path(post_comment.user) %> | 
+                <%= post_comment.created_at.strftime('%Y/%m/%d') %> | 
+                <% if post_comment.user == current_user %>
+                  <%= link_to "Delete", pairing_post_comment_path(post_comment.pairing, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
+                <% end %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= post_comment.comment %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    
+    

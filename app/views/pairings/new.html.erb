@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 pairing_form">
+    <div class="section-title-wrapper style-1 v1">
+      <h3 class="section-title section-title-sm left">投稿フォーム</h3>
+    </div>
+    <%= form_for(@pairing) do |f| %>
+      <% if @pairing.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= @pairing.errors.count %>件のエラーが発生しました。</h2>
+          <ul>
+            <% @pairing.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="col-sm-12">
+          <%= f.attachment_field :image %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group has-icon">
+            <label class="control-label sr-only">タイトル</label>
+              <%= f.text_field :title, class:"form-control" %>
+            <span class="fa fa-building form-control-icon" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="col-sm-6"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <%= f.text_area :caption, class:"form-control", rows:"3" %>
+        </div>
+      </div>
+      <hr>
+      <%= f.submit "Create Pairing", class:"btn btn-lg btn-block btn-success" %>
+    <% end %>
+  </div>
+</div>
