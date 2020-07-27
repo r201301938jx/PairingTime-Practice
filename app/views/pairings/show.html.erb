@@ -44,9 +44,7 @@
             <th>Title</th>
           </tr>
           <tr>
-            <td>
-              <%= link_to @pairing.title, pairing_path(@pairing) %>
-            </td>
+            <td><%= @pairing.title %></td>
           </tr>
           <tr>
             <th>Caption</th>
@@ -89,9 +87,9 @@
           <% @pairing.post_comments.each do |post_comment| %>
             <tr>
               <td>
-            　   <%= attachment_image_tag post_comment.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %> |
+            　   <%= attachment_image_tag post_comment.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %> 
                 <%= link_to post_comment.user.name, user_path(post_comment.user) %> | 
-                <%= post_comment.created_at.strftime('%Y/%m/%d') %> | 
+                <%= post_comment.created_at.strftime('%Y/%m/%d') %>  
                 <% if post_comment.user == current_user %>
                   <%= link_to "Delete", pairing_post_comment_path(post_comment.pairing, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
                 <% end %>

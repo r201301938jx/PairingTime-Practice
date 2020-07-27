@@ -17,25 +17,31 @@
  @import "bootstrap";
  
 header span {
- font-size: 36px;
+ font-size: 34px;
  color: #fff;
 }
 
-header, nav, h1, h2, h3, h4, th, td, .btn, p {
+header, nav, h1, h2, h3, h4, th, td, .btn, p, li, ul, a {
   font-family: Chalkduster;
 }
 
-.navbar-right {
- color: #fff;
- font-family: Chalkduster;
-}
 
 body {
-   background-image: image-url('image8.jpg');
+   padding: 70px 0;
+   background-image: image-url('image16.jpg');
    background-size: cover;
    background-position: center;
-   background-color:rgba(255,255,255,0.7);
+   background-color:rgba(255,255,255,0.6);
    background-blend-mode:lighten;
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+}
+
+.navbar-left {
+  padding-top: 15px;
 }
 
 .profile_image {
@@ -53,10 +59,6 @@ footer p {
  padding-top: 20px;
 }
 
-.body {
- margin: 50px 0;
-}
-
 .col-xs-2 h3 {
  padding-top: 90px;
 }
@@ -69,8 +71,8 @@ footer p {
 
 .headline h1 {
  text-align: center;
- font-size: 38px;
- padding: 20px;
+ font-size: 58px;
+ border-bottom: 3px double #8B4513;
 }
 
 .box {
@@ -97,10 +99,22 @@ footer p {
 }
 
 .right-upper {
- background-image: image-url('image7.jpg');
  background-size: cover;
  background-position: center center;
  border: 10px solid #8B4513;
+}
+
+.image1 {
+  background-image: image-url('image10.jpg');
+}
+.image2 {
+  background-image: image-url('image11.jpg');
+}
+.image3 {
+  background-image: image-url('image15.jpg');
+}
+.image4 {
+  background-image: image-url('image6.jpg');
 }
 
 .left-middle {
@@ -135,9 +149,9 @@ footer p {
  margin: 20px 10px;
 }
 
-/* Hamburger menu */
-
 @media (max-width: 768px) {
+  
+  /* Hamburger menu */
  
   #hm-icon{
     position: absolute;
@@ -218,5 +232,10 @@ footer p {
     text-decoration: none;
     font-weight: bold;
   }
+  
+  /* Main */
+  
+  body {
+    padding: 90px 0;
+  }
 }
-

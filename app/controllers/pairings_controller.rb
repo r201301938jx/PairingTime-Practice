@@ -1,5 +1,8 @@
 class PairingsController < ApplicationController
   
+  before_action :authenticate_user!
+  before_action :correct_user, only: [:edit, :update]
+  
   def new
     @pairing = Pairing.new
   end
@@ -47,6 +50,11 @@ class PairingsController < ApplicationController
   
   def pairing_params
     params.require(:pairing).permit(:title, :image, :caption)
+  end
+  
+  def correct_user
+    @pairing = Pairing.find(params[:id])
+    redirect_to pairings_path unless @pairing.user == current_user
   end
   
   def search_params
