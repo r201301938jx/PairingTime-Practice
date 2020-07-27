@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-xs-2">
-    <h3>User Info</h3>
+    <h3><i class="fas fa-user"></i> User Info</h3>
     <%= link_to user_path(@user) do %>
-      <%= attachment_image_tag @user, :profile_image, :fill, 90, 90, format:'jpg', class:"attachment user profile_image fallback", fallback: "no_image.jpg", size:'90x90' %>
+      <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format:'jpg', class:"attachment user profile_image fallback", fallback: "no_image.jpg", size:'90x90' %>
     <% end %>
     <table class="table userinfo">
       <tbody>
@@ -16,15 +16,19 @@
       </tbody>
     </table>
     <% if @user.id == current_user.id %>
-      <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-primary" %></p>
+      <p>
+        <%= link_to edit_user_path(@user), class: "btn btn-primary" do %>
+          <i class="fas fa-user-edit"></i> User Edit
+        <% end %>
+      </p>
     <% end %>
   </div>
   <div class="col-xs-10">
-    <h2>User Pairing Lists</h2>
+    <h2><i class="fas fa-list-alt"></i> User Pairing Lists</h2>
     <table class="table table-hover table-inverse">
       <thead>
         <tr>
-          <th>Image</th>
+          <th><i class="fas fa-camera-retro"></i> Image</th>
           <th>Title</th>
           <th>Caption</th>
           <th colspan="3"></th>
@@ -35,7 +39,7 @@
            <tr>
             <td>
               <%= link_to pairing_path(pairing) do %>
-                <%= attachment_image_tag pairing, :image, :fill, 150, 150, format:'jpg', class:"attachment user profile_image" %>
+                <%= attachment_image_tag pairing, :image, :fill, 150, 150, format:'jpg', class:"attachment pairing_image" %>
               <% end %>
               <br>
               <%= pluralize(pairing.post_comments.count, "comment") %>
@@ -50,6 +54,7 @@
             <td><%= pairing.caption %></td>
           </tr>
         <% end %>
+        <%= paginate @pairings %>
       </tbody>
     </table>
   </div>

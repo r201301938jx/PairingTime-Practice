@@ -15,7 +15,8 @@ class PairingsController < ApplicationController
   end
   
   def index
-    @pairings = Pairing.all
+    @q = Pairing.ransack(params[:q])
+    @pairings = @q.result(distinct: true).page(params[:page]).reverse_order
   end
   
   def show
@@ -46,6 +47,10 @@ class PairingsController < ApplicationController
   
   def pairing_params
     params.require(:pairing).permit(:title, :image, :caption)
+  end
+  
+  def search_params
+    params.require(:q).permit(:title, :caption)
   end
   
 end
