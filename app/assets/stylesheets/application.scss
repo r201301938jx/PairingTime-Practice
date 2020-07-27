@@ -105,16 +105,16 @@ footer p {
 }
 
 .image1 {
-  background-image: image-url('image10.jpg');
+  background-image: image-url('image7.jpg');
 }
 .image2 {
-  background-image: image-url('image11.jpg');
+  background-image: image-url('image10.jpg');
 }
 .image3 {
-  background-image: image-url('image15.jpg');
+  background-image: image-url('image11.jpg');
 }
 .image4 {
-  background-image: image-url('image6.jpg');
+  background-image: image-url('image9.jpg');
 }
 
 .left-middle {
@@ -125,14 +125,24 @@ footer p {
 }
 
 .right-bottom {
- background-image: image-url('image15.jpg');
+ background-image: image-url('animation-image3.gif');
  background-size: cover;
  background-position: center center;
  border: 10px solid #8B4513;
 }
 
+/* Flash Message */
+
 #error_explanation {
  color: red;
+}
+
+.alert {
+  color: red;
+}
+
+.notice {
+  color: green;
 }
 
 /* Pairing_new_path */
