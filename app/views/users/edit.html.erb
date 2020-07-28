@@ -26,7 +26,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="field">
-            <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, class:"user profile_image", id:"user_profile_image" %><br />
+            <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, class:"user profile_image fallback", fallback: "default_user.png", size:'100x100' %><br />
             <%= f.label :"Image" %><br />
             <%= f.attachment_field :profile_image, placeholder:"プロフィール画像" %> 
           </div>

@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-2 col-xs-12">
     <h3><i class="fas fa-user"></i> User Info</h3>
-    <%= attachment_image_tag @pairing.user, :profile_image, :fill, 100, 100, format:'jpg', class:"attachment user profile_image fallback", fallback: "no_image.jpg", size:'90x90' %>
+    <%= attachment_image_tag @pairing.user, :profile_image, :fill, 100, 100, format:'jpg', class:"attachment user profile_image fallback", fallback: "default_user.png", size:'100x100' %>
     <table class="table userinfo">
       <tbody>
         <tr></tr>
@@ -87,7 +87,7 @@
           <% @pairing.post_comments.each do |post_comment| %>
             <tr>
               <td>
-            　   <%= attachment_image_tag post_comment.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", size:'30x30' %> 
+            　   <%= attachment_image_tag post_comment.user, :profile_image, :fill, 30, 30, fallback: "default_user.png", size:'30x30' %> 
                 <%= link_to post_comment.user.name, user_path(post_comment.user) %> | 
                 <%= post_comment.created_at.strftime('%Y/%m/%d') %>  
                 <% if post_comment.user == current_user %>
