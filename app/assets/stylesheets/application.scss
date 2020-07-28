@@ -48,7 +48,7 @@ a {
  border-radius: 50%;
 }
 
-.col-xs-10 h2 {
+.col-lg-10 h2 {
   width: 350px;
   border-bottom: double 8px #8B4513;
 } 
@@ -59,7 +59,7 @@ footer p {
  padding-top: 20px;
 }
 
-.col-xs-2 h3 {
+.col-lg-2 h3 {
  padding-top: 90px;
 }
 
@@ -159,7 +159,39 @@ footer p {
  margin: 20px 10px;
 }
 
+/* Sign Up page */
+
+.field {
+  margin-bottom: 10px;
+}
+
 @media (max-width: 768px) {
+  
+  /* footer */
+  
+  footer p {
+   font-size: 10px;
+  }
+  
+  /* Home */
+  
+  .headline h1 {
+    font-size: 34px;
+  }
+  
+  .discription{
+    margin: 180px auto;
+    text-align: center;
+  }
+  
+  .discription h2 {
+    font-size: 18px;
+  }
+  
+  .discription p {
+    font-size: 14px;
+  }
+
   
   /* Hamburger menu */
  
