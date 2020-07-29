@@ -57,8 +57,4 @@ class PairingsController < ApplicationController
     redirect_to pairings_path unless @pairing.user == current_user
   end
   
-  def search_params
-    params.require(:q).permit(:title, :caption)
-  end
-  
 end
