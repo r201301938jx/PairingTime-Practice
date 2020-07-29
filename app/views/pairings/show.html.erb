@@ -9,7 +9,7 @@
           <th>Username</th>
         </tr>
         </tr>
-          <th><%= @pairing.user.name %></th>
+          <th><%= link_to @pairing.user.name, user_path(@pairing.user) %></th>
         </tr>
       </tbody>
     </table>
