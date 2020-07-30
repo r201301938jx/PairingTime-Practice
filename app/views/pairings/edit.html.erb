@@ -6,7 +6,7 @@
     <%= form_for(@pairing) do |f| %>
       <% if @pairing.errors.any? %>
         <div id="error_explanation">
-          <h3><%= pluralize(@pairing.errors.count, "error") %> prohibited this book from being saved:</h3>
+          <h3><%= @pairing.errors.count %> 件のエラーが発生しました。</h3>
           <ul>
             <% @pairing.errors.full_messages.each do |message| %>
               <li><%= message %></li>

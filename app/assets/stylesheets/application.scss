@@ -19,7 +19,7 @@
 body {
    font-family: "Comic Sans MS";
    padding: 70px 0;
-   background-image: image-url('image16.jpg');
+   background-image: image-url('image1.jpg');
    background-size: cover;
    background-position: center;
    background-color:rgba(255,255,255,0.6);
@@ -101,27 +101,27 @@ footer p {
 }
 
 .image1 {
-  background-image: image-url('image7.jpg');
+  background-image: image-url('image2.jpg');
 }
 .image2 {
-  background-image: image-url('image10.jpg');
+  background-image: image-url('image3.jpg');
 }
 .image3 {
-  background-image: image-url('image11.jpg');
+  background-image: image-url('image4.jpg');
 }
 .image4 {
-  background-image: image-url('image9.jpg');
+  background-image: image-url('image5.jpg');
 }
 
 .left-middle {
- background-image: image-url('image14.jpg');
+ background-image: image-url('image6.jpg');
  background-size: cover;
  background-position: center center;
  border: 10px solid #8B4513;
 }
 
 .right-bottom {
- background-image: image-url('animation-image3.gif');
+ background-image: image-url('animation-image1.gif');
  background-size: cover;
  background-position: center center;
  border: 10px solid #8B4513;
@@ -276,7 +276,7 @@ footer p {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   header span {
     font-size: 30px;
     color: #fff;

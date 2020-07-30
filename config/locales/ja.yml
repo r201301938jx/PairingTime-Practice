@@ -6,3 +6,19 @@ ja:
         previous: '前へ'
         next: '次へ'
         truncate: '...'
+  activerecord:
+    errors:
+      models:
+        pairing:
+          attributes: 
+            title: 
+              blank: "が空になっています"
+            caption:
+              blank: "が空になっています"
+            image:
+              blank: "が空になっています"
+        user:
+          attributes:
+            name:
+              blank: "が空になっています"
+              too_short: "が短すぎます"
