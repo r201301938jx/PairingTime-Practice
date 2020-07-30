@@ -18,7 +18,7 @@
  
 body {
    font-family: "Comic Sans MS";
-   padding: 70px 0;
+   padding: 80px 0;
    background-image: image-url('image1.jpg');
    background-size: cover;
    background-position: center;
@@ -26,7 +26,7 @@ body {
    background-blend-mode:lighten;
 }
 
-header span {
+header h2 {
  font-size: 34px;
  color: #fff;
 }
@@ -67,7 +67,7 @@ footer p {
 
 .headline h1 {
  text-align: center;
- font-size: 58px;
+ font-size: 46px;
  border-bottom: 3px double #8B4513;
 }
 
@@ -163,16 +163,23 @@ footer p {
 
 @media (max-width: 768px) {
   
+  header h2 {
+    font-size: 36px;
+    text-align: center;
+    margin: auto;
+  }
+  
   /* footer */
   
   footer p {
    font-size: 14px;
+   text-align: center;
   }
   
   /* Home */
   
   .headline h1 {
-    font-size: 34px;
+    font-size: 26px;
   }
   
   .discription{
@@ -274,20 +281,4 @@ footer p {
   body {
     padding: 90px 0;
   }
-}
-
-@media (max-width: 768px) {
-  header span {
-    font-size: 30px;
-    color: #fff;
-  }
-  
-  .headline h1 {
-    font-size: 30px;
-  }
-  
-  footer p {
-    text-align: center;
-  }
-
 }
