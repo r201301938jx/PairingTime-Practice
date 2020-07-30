@@ -165,7 +165,6 @@ footer p {
   
   header h2 {
     font-size: 36px;
-    text-align: center;
     margin: auto;
   }
   
@@ -179,7 +178,7 @@ footer p {
   /* Home */
   
   .headline h1 {
-    font-size: 26px;
+    font-size: 20px;
   }
   
   .discription{
@@ -194,8 +193,11 @@ footer p {
   .discription p {
     font-size: 14px;
   }
-
   
+  .sp-none {
+    display: none;
+  }
+
   /* Hamburger menu */
  
   #hm-icon{
